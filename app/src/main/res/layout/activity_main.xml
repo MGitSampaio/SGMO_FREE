@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/tvQtdeFuncionariosNa"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="x"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="@+id/tvFuncionariosHome"
+        app:layout_constraintTop_toBottomOf="@+id/tvFuncionariosHome" />
+
+    <ImageView
+        android:id="@+id/imgClienteHome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_cliente" />
+
+    <TextView
+        android:id="@+id/tvClienteHome"
+        android:layout_width="51dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="4dp"
+        android:text="Clientes"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgClienteHome" />
+
+    <TextView
+        android:id="@+id/tvQtdeClientes"
+        android:layout_width="0dp"
+        android:layout_height="19dp"
+        android:layout_marginTop="4dp"
+        android:text="x"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintStart_toStartOf="@+id/imgClienteHome"
+        app:layout_constraintTop_toBottomOf="@+id/tvClienteHome" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="top"
+        tools:layout_editor_absoluteY="602dp" />
+
+    <ImageView
+        android:id="@+id/imgUnidadeHome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toEndOf="@+id/imgClienteHome"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_unidade" />
+
+    <TextView
+        android:id="@+id/tvQtdeUnidades"
+        android:layout_width="0dp"
+        android:layout_height="19dp"
+        android:layout_marginTop="4dp"
+        android:text="x"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintStart_toStartOf="@+id/imgUnidadeHome"
+        app:layout_constraintTop_toBottomOf="@+id/tvUnidadeHome" />
+
+    <ImageView
+        android:id="@+id/imgPostosHome"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toEndOf="@+id/imgUnidadeHome"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_posto" />
+
+    <TextView
+        android:id="@+id/tvPostosHome"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        android:layout_marginTop="4dp"
+        android:text="Postos"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="@+id/imgPostosHome"
+        app:layout_constraintStart_toStartOf="@+id/imgPostosHome"
+        app:layout_constraintTop_toBottomOf="@+id/imgPostosHome" />
+
+    <TextView
+        android:id="@+id/tvUnidadeHome"
+        android:layout_width="59dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Unidades"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="@+id/imgUnidadeHome"
+        app:layout_constraintStart_toStartOf="@+id/imgUnidadeHome"
+        app:layout_constraintTop_toBottomOf="@+id/imgUnidadeHome" />
+
+    <TextView
+        android:id="@+id/tvQtdePostos"
+        android:layout_width="0dp"
+        android:layout_height="19dp"
+        android:layout_marginTop="4dp"
+        android:text="x"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintStart_toStartOf="@+id/imgPostosHome"
+        app:layout_constraintTop_toBottomOf="@+id/tvPostosHome" />
+
+    <TextView
+        android:id="@+id/tvQtdePV"
+        android:layout_width="0dp"
+        android:layout_height="19dp"
+        android:layout_marginTop="4dp"
+        android:text="x"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="@+id/imgPostosHome"
+        app:layout_constraintTop_toBottomOf="@+id/tvPostosHome" />
+
+    <ImageView
+        android:id="@+id/imgFuncionariosHome"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toEndOf="@+id/imgPostosHome"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_funcionario" />
+
+    <TextView
+        android:id="@+id/tvFuncionariosHome"
+        android:layout_width="83dp"
+        android:layout_height="19dp"
+        android:layout_marginTop="4dp"
+        android:text="Funcionarios"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="@+id/imgFuncionariosHome"
+        app:layout_constraintStart_toStartOf="@+id/imgFuncionariosHome"
+        app:layout_constraintTop_toBottomOf="@+id/imgFuncionariosHome" />
+
+    <TextView
+        android:id="@+id/tvQtdeFuncionarios"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="x"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintStart_toStartOf="@+id/tvFuncionariosHome"
+        app:layout_constraintTop_toBottomOf="@+id/tvFuncionariosHome" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="top"
+        tools:layout_editor_absoluteY="602dp" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="top"
+        tools:layout_editor_absoluteY="602dp" />
+
+    <ImageView
+        android:id="@+id/imgMaterialHome"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvQtdeClientes"
+        app:srcCompat="@drawable/ic_material" />
+
+    <ImageView
+        android:id="@+id/imgTarefasHome"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toEndOf="@+id/imgMaterialHome"
+        app:layout_constraintTop_toBottomOf="@+id/tvQtdeUnidades"
+        app:srcCompat="@drawable/ic_tarefa" />
+
+    <ImageView
+        android:id="@+id/imgVencimentoHome"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toEndOf="@+id/imgTarefasHome"
+        app:layout_constraintTop_toBottomOf="@+id/tvQtdePostos"
+        app:srcCompat="@drawable/ic_vencimento" />
+
+    <TextView
+        android:id="@+id/tvMateriaisHome"
+        android:layout_width="59dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="4dp"
+        android:text="Material"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgMaterialHome" />
+
+    <TextView
+        android:id="@+id/tvTarefasHome"
+        android:layout_width="55dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="4dp"
+        android:text="Tarefas"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintStart_toEndOf="@+id/tvMateriaisHome"
+        app:layout_constraintTop_toBottomOf="@+id/imgTarefasHome" />
+
+    <TextView
+        android:id="@+id/tvAsoHome"
+        android:layout_width="87dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="4dp"
+        android:text="Vencimentos"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintStart_toEndOf="@+id/tvTarefasHome"
+        app:layout_constraintTop_toBottomOf="@+id/imgVencimentoHome" />
+
+    <TextView
+        android:id="@+id/tvQtdeMaterial"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="x"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintStart_toStartOf="@+id/imgMaterialHome"
+        app:layout_constraintTop_toBottomOf="@+id/tvMateriaisHome" />
+
+    <TextView
+        android:id="@+id/tvQtdeMaterialNa"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="x"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="@+id/imgMaterialHome"
+        app:layout_constraintTop_toBottomOf="@+id/tvMateriaisHome" />
+
+    <TextView
+        android:id="@+id/tvQtdeTarefas"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="x"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintStart_toStartOf="@+id/tvTarefasHome"
+        app:layout_constraintTop_toBottomOf="@+id/tvTarefasHome" />
+
+    <TextView
+        android:id="@+id/tvQtdeTarefasNe"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="x"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="@+id/tvTarefasHome"
+        app:layout_constraintTop_toBottomOf="@+id/tvTarefasHome" />
+
+    <TextView
+        android:id="@+id/tvQtdeVencimentoAv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="x"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintStart_toStartOf="@+id/tvAsoHome"
+        app:layout_constraintTop_toBottomOf="@+id/tvAsoHome" />
+
+    <TextView
+        android:id="@+id/tvQtdeVencimentoV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="x"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="@+id/tvAsoHome"
+        app:layout_constraintTop_toBottomOf="@+id/tvAsoHome" />
+
+
+    <EditText
+        android:id="@+id/etDtApp"
+        android:layout_width="136dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="8dp"
+        android:clickable="false"
+        android:editable="false"
+        android:ems="10"
+        android:enabled="true"
+        android:text="xxx"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvQtdeVencimentoAv" />
+
+    <ImageView
+        android:id="@+id/imgUniHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toEndOf="@+id/imgVencimentoHome"
+        app:layout_constraintTop_toBottomOf="@+id/tvQtdeFuncionariosNa"
+        app:srcCompat="@drawable/ic_uniforme" />
+
+    <TextView
+        android:id="@+id/tvUniformeHome"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        android:layout_marginTop="4dp"
+        android:text="Uniformes"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="@+id/imgUniHome"
+        app:layout_constraintStart_toStartOf="@+id/imgUniHome"
+        app:layout_constraintTop_toBottomOf="@+id/imgUniHome" />
+
+    <TextView
+        android:id="@+id/tvQtdeUniV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="x"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="@+id/imgUniHome"
+        app:layout_constraintTop_toBottomOf="@+id/tvUniformeHome" />
+
+    <TextView
+        android:id="@+id/tvQtdeUniAv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="x"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintStart_toStartOf="@+id/imgUniHome"
+        app:layout_constraintTop_toBottomOf="@+id/tvUniformeHome" />
+
+    <EditText
+        android:id="@+id/etDtSo"
+        android:layout_width="61dp"
+        android:layout_height="38dp"
+        android:ems="10"
+        android:inputType="date"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.165"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="227dp" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/bannerMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        app:adSize="BANNER"
+        app:adUnitId="ca-app-pub-5510724908004504/6155812609"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="0dp"></com.google.android.gms.ads.AdView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

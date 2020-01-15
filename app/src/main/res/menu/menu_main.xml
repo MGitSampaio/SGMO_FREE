@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+    <menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.myapplication.MainActivity">
+
+            <item android:id="@+id/Atualizar" android:title="@string/atualizar"
+               android:icon="@drawable/ic_check" app:showAsAction="ifRoom"/>
+            <item android:id="@+id/Cadastros" android:title="@string/cadastros" />
+            <item android:id="@+id/Relatorios" android:title="@string/relatorios" />
+    <item
+        android:id="@+id/Sobre"
+        android:title="Sobre" />
+
+</menu>

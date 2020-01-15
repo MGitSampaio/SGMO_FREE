@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "932411550236",
+    "firebase_url": "https://sgmo-free.firebaseio.com",
+    "project_id": "sgmo-free",
+    "storage_bucket": "sgmo-free.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:932411550236:android:e084d7b64565b209c50dd9",
+        "android_client_info": {
+          "package_name": "com.marcelosampaio.sgmo_free"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "932411550236-le8ftpnle7t7s4vhquvqgd3p4o2l9dpo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.marcelosampaio.sgmo_free",
+            "certificate_hash": "1c6a464bb414130312fc65e1f1b6fd72e3d62334"
+          }
+        },
+        {
+          "client_id": "932411550236-pm17d092n267red4uaa0nqmim32oa9nh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYk9mBlrTnQPYbXNBImEOT3RfNYcbeG5Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "932411550236-pm17d092n267red4uaa0nqmim32oa9nh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

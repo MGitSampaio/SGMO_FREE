@@ -1,0 +1,230 @@
+<?xml version="1.0"?>
+
+<resources>
+
+    <string name="addMob_appid">ca-app-pub-5510724908004504~1945939007</string>
+    <string name="AddMob_Banner">ca-app-pub-5510724908004504/6155812609</string>
+
+    <string name="app_name">SGMO - FREE</string>
+
+    <string name="title_notifications">RELATÓRIOS</string>
+
+    <string name="area">Área</string>
+
+    <string name="add">Adicionar</string>
+
+    <string name="aso">ASO</string>
+
+    <string name="atualizar">Atualizar</string>
+
+    <string name="bairro">Bairro</string>
+
+    <string name="bo">BO</string>
+
+    <string name="buscar">Buscar</string>
+
+    <string name="cadastros">Cadastros</string>
+
+    <string name="cadastroCargos">Cadastro de Cargos</string>
+
+    <string name="cadastroCliente">Cadastro de Clientes</string>
+
+    <string name="cadastroFuncionario">Cadastro de Funcionarios</string>
+
+    <string name="cliuni">Cliente - Unidade</string>
+
+    <string name="contato">Contato</string>
+
+    <string name="cadastroMaterial">Cadastro de Materiais</string>
+
+    <string name="cadastroMovimentacao">Cadastro de Movimentações</string>
+
+    <string name="cadastroOcorrencia">Cadastro de Ocorrências</string>
+
+    <string name="cadastroPosto">Cadastro de Postos</string>
+
+    <string name="cadastroRonda">Cadastro de Rondas</string>
+
+    <string name="cadastroTarefa">Cadastro de Tarefas</string>
+
+    <string name="cadastroUnidade">Cadastro de Unidades</string>
+
+    <string name="cargo">Cargo</string>
+
+    <string name="cidade">Cidade</string>
+
+    <string name="cliente">Cliente</string>
+
+    <string name="cnv">CNV</string>
+
+    <string name="codigo">Código</string>
+
+    <string name="configuracao">Configuração</string>
+
+    <string name="cpf">CPF</string>
+
+    <string name="cracha">Crachá</string>
+
+    <string name="data">Data</string>
+
+    <string name="dtInicio">Data Início</string>
+    <string name="dtTermino">Data Término</string>
+
+    <string name="dataZero">00/00/0000</string>
+
+    <string name="dtBlusa">Data Blusa</string>
+
+    <string name="dtCamisa">Data Camisa</string>
+
+    <string name="dtCalca">Data Calça</string>
+
+    <string name="dtCalcado">Data Calçado</string>
+
+    <string name="dtCobertura">Data Cobertura</string>
+
+    <string name="descricao">Descrição</string>
+
+    <string name="dtAbastecimento">Data do Abastecimento</string>
+
+    <string name="endereco">Endereço</string>
+
+    <string name="entrada1">Início do Turno</string>
+
+    <string name="entrada2">Retorno do Almoço</string>
+
+    <string name="escala">Escala</string>
+
+    <string name="excluir">Excluir</string>
+
+    <string name="experiencia">Experiência</string>
+
+    <string name="folguista">Folguista</string>
+
+    <string name="funcionario">Funcionário</string>
+
+    <string name="ferias">Férias</string>
+
+    <string name="hora">Hora</string>
+
+    <string name="hrAbastecimento">Hora do Abastecimento</string>
+
+    <string name="hrInicio">Hora Início</string>
+
+    <string name="hrTermino">Hora Término</string>
+
+    <string name="id">ID</string>
+
+    <string name="importacoes">Importações</string>
+
+    <string name="inicio">INÍCIO</string>
+
+    <string name="km">KM</string>
+    <string name="kmFinal">KM FINAL</string>
+    <string name="kmInicial">KM INICIAL</string>
+
+    <string name="listaCargo">Lista de Cargos</string>
+
+    <string name="listaCliente">Lista de Clientes</string>
+
+    <string name="listaFuncionario">Lista de Funcionarios</string>
+
+    <string name="listaMaterial">Lista de Materiais</string>
+
+    <string name="listaOcorrencia">Lista de Ocorrências</string>
+
+    <string name="listaPosto">Lista de Postos</string>
+
+    <string name="listaRonda">Lista de Rondas</string>
+
+    <string name="listaTarefas">Lista de Tarefas</string>
+
+    <string name="listaUnidade">Lista de Unidades</string>
+
+    <string name="material">Material</string>
+
+    <string name="motivo">Motivo</string>
+
+    <string name="movimentacao">Movimentação</string>
+
+    <string name="nome">Nome</string>
+
+    <string name="nota">Nota</string>
+
+    <string name="nrBlusa">Nr Blusa</string>
+
+    <string name="nrCamisa">Nr Camisa</string>
+
+    <string name="nrCalca">Nr Calça</string>
+
+    <string name="nrCalcado">Nr Calçado</string>
+
+    <string name="nrCobertura">Nr Cobertura</string>
+
+    <string name="ocorrencia">Ocorrência</string>
+
+    <string name="observacao">Observação</string>
+
+    <string name="pFolga">Primeira Folga</string>
+
+    <string name="sFolga">Segunda Folga</string>
+
+    <string name="posto">Posto</string>
+
+    <string name="psico">Psicotécnico</string>
+
+    <string name="qtBlusa">Qtde Blusa</string>
+
+    <string name="qtCamisa">Qtde Camisa</string>
+
+    <string name="qtCalca">Qtde Calça</string>
+
+    <string name="qtCalcado">Qtde Calçado</string>
+
+    <string name="qtCobertura">Qtde Cobertura</string>
+
+    <string name="re">RE</string>
+
+    <string name="reAusente">RE Ausente</string>
+
+    <string name="reCobertura">RE Cobertura</string>
+
+    <string name="reciclagem">Reciclagem</string>
+
+    <string name="relato">Relato</string>
+    <string name="relatorios">Relatórios</string>
+
+    <string name="rg">RG</string>
+
+    <string name="ronda">Ronda</string>
+
+    <string name="saida1">Saída para o Almoço</string>
+
+    <string name="saida2">Fim do Turno</string>
+
+    <string name="salvar">Salvar</string>
+
+    <string name="separador"> - </string>
+
+    <string name="status"> Status </string>
+
+    <string name="tarefa">Tarefa</string>
+
+    <string name="telefone">Telefone</string>
+
+    <string name="termino">TÉRMINO</string>
+
+    <string name="tipoOcorrencia">Tipo de Ocorrência</string>
+
+    <string name="turno">Turno</string>
+
+    <string name="uf">UF</string>
+
+    <string name="unidade">Unidade</string>
+
+    <string name="usuario">Usuário</string>
+
+    <string name="valor">Valor</string>
+
+    <string name="viatura">Viatura</string>
+
+</resources>

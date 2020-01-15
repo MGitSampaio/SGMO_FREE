@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.marcelosampaio.sgmo_free">
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".act.Sobre"
+            android:label="Sobre">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="@string/addMob_appid" />
+
+        <activity android:name=".act.CadastroUsuario" />
+        <activity
+            android:name=".act.Relatorios"
+            android:label="Relatórios">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".act.Cadastros"
+            android:label="Cadastros">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity> <!-- ====================================================================== -->
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> <!-- ====================================================================== -->
+        <activity
+            android:name=".act.ListaVencimento"
+            android:label="Lista de Vencimentos">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".act.Cadastros" />
+        </activity>
+        <activity
+            android:name=".act.CadastroVencimento"
+            android:label="Cadastro de Vencimentos"
+            android:parentActivityName=".act.ListaVencimento">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".act.ListaVencimento" />
+        </activity>
+        <activity
+            android:name=".act.ListaUniforme"
+            android:label="Lista de Uniformes">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".act.Cadastros" />
+        </activity>
+        <activity
+            android:name=".act.CadastroUniforme"
+            android:label="Cadastro de Uniformes"
+            android:parentActivityName=".act.ListaUniforme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".act.ListaUniforme" />
+        </activity>
+        <activity
+            android:name=".act.ListaCargo"
+            android:label="Lista de Cargos">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".act.Cadastros" />
+        </activity>
+        <activity
+            android:name=".act.CadastroCargo"
+            android:label="Cadastro de Cargo"
+            android:parentActivityName=".act.ListaCargo">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".act.ListaCargo" />
+        </activity> <!-- ====================================================================== -->
+        <activity
+            android:name=".act.ListaFuncionario"
+            android:label="Lista de Funcionarios">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".act.Cadastros" />
+        </activity>
+        <activity
+            android:name=".act.CadastroFuncionario"
+            android:label="Cadastro de Funcionário"
+            android:parentActivityName=".act.ListaFuncionario">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".act.ListaFuncionario" />
+        </activity> <!-- ====================================================================== -->
+        <activity
+            android:name=".act.ListaCliente"
+            android:label="Lista de Clientes">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".act.Cadastros" />
+        </activity>
+        <activity
+            android:name=".act.CadastroCliente"
+            android:label="Cadastro de Cliente"
+            android:parentActivityName=".act.ListaCliente">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".act.ListaCliente" />
+        </activity> <!-- ====================================================================== -->
+        <activity
+            android:name=".act.ListaUnidade"
+            android:label="Lista de Unidades">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".act.Cadastros" />
+        </activity>
+        <activity
+            android:name=".act.CadastroUnidade"
+            android:label="Cadastro de Unidade"
+            android:parentActivityName=".act.ListaUnidade">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".act.ListaUnidade" />
+        </activity> <!-- ====================================================================== -->
+        <activity
+            android:name=".act.ListaPosto"
+            android:label="Lista de Postos">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".act.Cadastros" />
+        </activity>
+        <activity
+            android:name=".act.CadastroPosto"
+            android:label="Cadastro de Posto"
+            android:parentActivityName=".act.ListaPosto">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".act.ListaPosto" />
+        </activity> <!-- ====================================================================== -->
+        <activity
+            android:name=".act.ListaRonda"
+            android:label="Lista de Rondas">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".act.Cadastros" />
+        </activity>
+        <activity
+            android:name=".act.CadastroRonda"
+            android:label="Cadastro de Ronda"
+            android:parentActivityName=".act.ListaRonda">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".act.ListaRonda" />
+        </activity> <!-- ====================================================================== -->
+        <activity
+            android:name=".act.ListaVisita"
+            android:label="Lista de Visitas">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".act.ListaRonda" />
+        </activity>
+        <activity
+            android:name=".act.CadastroVisita"
+            android:label="Cadastro de Visitas"
+            android:parentActivityName=".act.ListaVisita">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".act.ListaVisita" />
+        </activity> <!-- ====================================================================== -->
+        <activity
+            android:name=".act.ListaTarefa"
+            android:label="Lista de Tarefas">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".act.Cadastros" />
+        </activity>
+        <activity
+            android:name=".act.CadastroTarefa"
+            android:label="Cadastro de Tarefa"
+            android:parentActivityName=".act.ListaTarefa">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".act.ListaTarefa" />
+        </activity> <!-- ====================================================================== -->
+        <activity
+            android:name=".act.ListaOcorrencia"
+            android:label="Lista de Ocorrências">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".act.Cadastros" />
+        </activity>
+        <activity
+            android:name=".act.CadastroOcorrencia"
+            android:label="Cadastro de Ocorrência"
+            android:parentActivityName=".act.ListaOcorrencia">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".act.ListaOcorrencia" />
+        </activity> <!-- ====================================================================== -->
+        <activity
+            android:name=".act.ListaMovimentacao"
+            android:label="Lista de Movimentações">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".act.Cadastros" />
+        </activity>
+        <activity
+            android:name=".act.CadastroMovimentacao"
+            android:label="Cadastro de Movimentação"
+            android:parentActivityName=".act.ListaMovimentacao">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".act.ListaMovimentacao" />
+        </activity> <!-- ====================================================================== -->
+        <activity
+            android:name=".act.ListaMaterial"
+            android:label="Lista de Material">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".act.Cadastros" />
+        </activity>
+        <activity
+            android:name=".act.CadastroMaterial"
+            android:label="Cadastro de Material"
+            android:parentActivityName=".act.ListaMaterial">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".act.ListaMaterial" />
+        </activity> <!-- ====================================================================== -->
+        <activity
+            android:name=".act.ListaEscala"
+            android:label="Lista de Escalas">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".act.Cadastros" />
+        </activity>
+        <!--
+ Set custom default icon. This is used when no icon is set for incoming notification messages.
+     See README(https://goo.gl/l4GJaQ) for more.
+        -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@mipmap/ic_launcher_round" />
+    </application>
+
+</manifest>
