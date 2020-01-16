@@ -174,7 +174,7 @@ public class MainActivity extends AppCompatActivity {
         etDtApp = findViewById(R.id.etDtApp);
 
         setaContadores();
-        
+
         etDtSo.setText(dataHelper.convertLongEmStringData(hoje.getTime()));
         etDtApp.setText(dataHelper.convertLongEmStringData(datasDao.dataApp()));
 
