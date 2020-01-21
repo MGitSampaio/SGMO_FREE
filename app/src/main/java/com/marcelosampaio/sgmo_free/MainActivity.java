@@ -77,7 +77,8 @@ public class MainActivity extends AppCompatActivity {
     private final String[] appPermissoes = {
             Manifest.permission.CALL_PHONE,
             Manifest.permission.READ_EXTERNAL_STORAGE,
-            Manifest.permission.WRITE_EXTERNAL_STORAGE
+            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            Manifest.permission.INTERNET
 
     };
 

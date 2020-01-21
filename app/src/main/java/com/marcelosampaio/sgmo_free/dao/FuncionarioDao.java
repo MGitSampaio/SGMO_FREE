@@ -111,7 +111,7 @@ public class FuncionarioDao {
 
     public List<Funcionario> listarFuncionariosEfetivos() {
         List<Funcionario> lstFuncionarios = new ArrayList<>();
-        Cursor cursor = banco.rawQuery("Select * from funcionario where idStatus = 0", null);
+        Cursor cursor = banco.rawQuery("Select * from funcionario where idStatus < 3", null);
 
         while (cursor.moveToNext()) {
             Funcionario f = new Funcionario();
@@ -140,7 +140,7 @@ public class FuncionarioDao {
 
     public List<Funcionario> listarFolguista() {
         List<Funcionario> lstFolguistas = new ArrayList<>();
-        Cursor cursor = banco.rawQuery("Select * from funcionario where idStatus = 2 ", null);
+        Cursor cursor = banco.rawQuery("Select * from funcionario where idStatus = 3 ", null);
 
         while (cursor.moveToNext()) {
             Funcionario f = new Funcionario();
@@ -198,7 +198,7 @@ public class FuncionarioDao {
     public int contarFuncionariosNa() {
         int contador = 0;
 
-        String sqlEfetivos, sqlFolguistas;
+        String sqlEfetivos;
 
         sqlEfetivos = ("Select idFuncionario from funcionario where idFuncionario > 3 Except " +
                 "Select idFuncionario from posto");
@@ -223,12 +223,12 @@ public class FuncionarioDao {
 
         values.put("re", "-2");
         values.put("nomeFuncionario", "Sem - Folguista");
-        values.put("idStatus", 2);
+        values.put("idStatus", 3);
         banco.insert("funcionario", null, values);
 
         values.put("re", "-1");
         values.put("nomeFuncionario", "Falta - Folguista");
-        values.put("idStatus", 2);
+        values.put("idStatus", 3);
         banco.insert("funcionario", null, values);
 
     }
