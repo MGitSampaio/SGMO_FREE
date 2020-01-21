@@ -107,7 +107,7 @@ public class CargoDao
     private void inserirCargo() {
         ContentValues values = new ContentValues();
         values.put("cargo","Vigilante");
-        banco.insert("status",null,values);
+        banco.insert("cargo",null,values);
         banco.close();
     }
 }

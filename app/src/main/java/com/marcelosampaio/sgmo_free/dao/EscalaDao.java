@@ -26,7 +26,7 @@ public class EscalaDao {
         banco = conexaoSQLite.getWritableDatabase();
     }
 
-    public void verificaEscala(String dataApp) {
+    public void verificaEscala() {
 
         Cursor cursor;
         cursor = banco.query("funcionario", new String[]{"idFuncionario", "idEscala", "folga1", "folga2"},
@@ -282,7 +282,7 @@ public class EscalaDao {
 
     private void inserirEscala(){
         ContentValues values = new ContentValues();
-        String escala[] = new String[14];
+        String escala[] = new String[13];
 
         escala[0]="12x36";
         escala[1]="4x2";

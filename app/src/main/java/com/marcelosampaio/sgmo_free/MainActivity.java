@@ -322,14 +322,13 @@ public class MainActivity extends AppCompatActivity {
     //==============================================================================================
     private void atualizaEscalas() {
 
-        Date App;
-        Date Sys;
-        App = dataHelper.converteStringEmData(etDtApp.getText().toString());
-        Sys = dataHelper.converteStringEmData(etDtSo.getText().toString());
-        long diferenca = (Sys.getTime() - App.getTime());
-        long dias = (diferenca / 86400000L);
+        Date App = dataHelper.converteStringEmData(etDtApp.getText().toString());
+        Date Sys= dataHelper.converteStringEmData(etDtSo.getText().toString());
 
-        if (dias < 0) {
+
+
+
+        if (App.compareTo(Sys) == 0) {
 
             AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
             builder.setTitle("ERRO")
@@ -344,13 +343,15 @@ public class MainActivity extends AppCompatActivity {
             alertDialog.show();
         } else {
 
-            escalaDao.verificaEscala(etDtApp.getText().toString());
+            escalaDao.verificaEscala();
+
             long dia = dataHelper.converteStringDataEmLong(etDtApp.getText().toString());
             datasDao.inserir(dia + 86400000L);
 
+            Toast.makeText(this, "Escalas Atualizadas", Toast.LENGTH_LONG).show();
         }
 
-        Toast.makeText(this, "Escalas Atualizadas", Toast.LENGTH_LONG).show();
+
 
         onResume();
     }
