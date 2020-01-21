@@ -5,6 +5,11 @@
     <string name="addMob_appid">ca-app-pub-5510724908004504~1945939007</string>
     <string name="AddMob_Banner">ca-app-pub-5510724908004504/6155812609</string>
     <string name="teste">ca-app-pub-3940256099942544/6300978111</string>
+
+    <string name="YouTube">
+        <a href="https://www.youtube.com/playlist?list=PLooga0PBXYp3afQ6OXvCYnedsVq3rp4hp">You Tube</a>
+    </string>
+
     <string name="app_name">SGMO - FREE</string>
 
     <string name="title_notifications">RELATÓRIOS</string>
