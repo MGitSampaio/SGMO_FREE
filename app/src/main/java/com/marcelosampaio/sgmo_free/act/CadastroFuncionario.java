@@ -110,7 +110,7 @@ public class CadastroFuncionario extends AppCompatActivity {
 
             idFuncionario = funcionarioModel.getIdFuncionario();
             setSpCargo(spCargo, funcionarioModel.getIdCargo());
-            setSpStatus(spStatus,funcionarioModel.getIdStatus());
+            setSpStatus(spStatus, funcionarioModel.getIdStatus());
             setSpEscala(spEscala, funcionarioModel.getIdEscala());
             etRe.setText(funcionarioModel.getRe());
             etNomeFuncionario.setText(funcionarioModel.getNomeFuncionario());
@@ -188,8 +188,10 @@ public class CadastroFuncionario extends AppCompatActivity {
         funcionarioModel.setIdStatus(statusSelecionado.getIdStatus());
         Escala escalaSelecionada = (Escala) this.spEscala.getSelectedItem();
         funcionarioModel.setIdEscala(escalaSelecionada.getIdEscala());
-        funcionarioModel.setFolga1(dataHelper.converteStringDataEmLong(etFolga1.getText().toString().trim()));
-        funcionarioModel.setFolga2(dataHelper.converteStringDataEmLong(etFolga2.getText().toString().trim()));
+        funcionarioModel.setFolga1(dataHelper.converteStringDataEmLong
+                (etFolga1.getText().toString().trim()));
+        funcionarioModel.setFolga2(dataHelper.converteStringDataEmLong
+                (etFolga2.getText().toString().trim()));
         funcionarioModel.setRe(etRe.getText().toString().trim());
         funcionarioModel.setNomeFuncionario(etNomeFuncionario.getText().toString().trim());
         funcionarioModel.setTelefone(etTelefoneFuncionario.getText().toString().trim());

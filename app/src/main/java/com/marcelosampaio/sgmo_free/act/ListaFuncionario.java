@@ -129,7 +129,7 @@ public class ListaFuncionario extends AppCompatActivity
         final Funcionario cargoExcluir = funcionariosFiltrado.get(menuInfo.position);
         AlertDialog dialog = new AlertDialog.Builder(this)
                 .setTitle("Atenção")
-                .setMessage("Confirma a exclusão do Cargo?")
+                .setMessage("Confirma a exclusão do Funcionário?")
                 .setNegativeButton("Não", null)
                 .setPositiveButton("Sim", new DialogInterface.OnClickListener()
                 {

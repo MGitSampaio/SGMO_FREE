@@ -128,7 +128,7 @@ public class ListaOcorrencia extends AppCompatActivity
         final Ocorrencia ocorrenciaExcluir = ocorrenciasFiltrado.get(menuInfo.position);
         AlertDialog dialog = new AlertDialog.Builder(this)
                 .setTitle("Atenção")
-                .setMessage("Confirma a exclusão do Ocorrencia?")
+                .setMessage("Confirma a exclusão do Ocorrência?")
                 .setNegativeButton("Não", null)
                 .setPositiveButton("Sim", new DialogInterface.OnClickListener()
                 {

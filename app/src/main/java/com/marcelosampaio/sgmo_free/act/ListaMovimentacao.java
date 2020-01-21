@@ -129,7 +129,7 @@ public class ListaMovimentacao extends AppCompatActivity {
         final Movimentacao movimentacaoExcluir = movimentacaoFiltrado.get(menuInfo.position);
         AlertDialog dialog = new AlertDialog.Builder(this)
                 .setTitle("Atenção")
-                .setMessage("Confirma a exclusão da Movimentacao?")
+                .setMessage("Confirma a exclusão da Movimentação?")
                 .setNegativeButton("Não", null)
                 .setPositiveButton("Sim", new DialogInterface.OnClickListener()
                 {
