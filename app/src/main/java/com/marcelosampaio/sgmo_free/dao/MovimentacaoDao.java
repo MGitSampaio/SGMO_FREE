@@ -70,7 +70,7 @@ public class MovimentacaoDao
     public List<Movimentacao> listarMovimentacoes()
     {
         List<Movimentacao> lstMovimentacaos = new ArrayList<>();
-        Cursor cursor = banco.rawQuery("select * from movimentacao Order By dia,cliente,unidade", new String[]{});
+        Cursor cursor = banco.rawQuery("select * from movimentacao Order By dia DESC,cliente,unidade ", new String[]{});
 
         while (cursor.moveToNext())
         {
