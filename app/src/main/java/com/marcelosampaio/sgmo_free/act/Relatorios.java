@@ -144,8 +144,7 @@ public class Relatorios extends AppCompatActivity {
                         movimentacaoDao = new MovimentacaoDao(Relatorios.this);
 
                         try {
-                            movimentacaoDao.reportMovimentacao(dataHelper.
-                                    converteStringDataEmLong(inicio.toString()));
+                            movimentacaoDao.reportMovimentacao(inicio.getText().toString());
                         } catch (Exception e) {
                             e.printStackTrace();
                         }

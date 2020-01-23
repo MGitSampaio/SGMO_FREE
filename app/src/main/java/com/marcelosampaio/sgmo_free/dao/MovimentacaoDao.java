@@ -100,9 +100,11 @@ public class MovimentacaoDao
                 {String.valueOf(movimentacao.getIdMovimentacao())});
     }
 
-    public void reportMovimentacao(long dia) throws Exception {
+    //==============================================================================================
+    // gera o relatório de movimentacao
+    public void reportMovimentacao(String dia) throws Exception {
 
-        FileWriter writer = new FileWriter("/storage/emulated/0/Download/rondas.html");
+        FileWriter writer = new FileWriter("/storage/emulated/0/Download/movimentacao.html");
 
         writer.append("<!DOCTYPE html>");
         writer.append("<html>");
@@ -117,7 +119,7 @@ public class MovimentacaoDao
         writer.append("</head>");
         writer.append("<body>");
 
-        Cursor cursor = banco.rawQuery("Select * from usuario", null);
+        Cursor cursor = banco.rawQuery("Select * from usuario ", null);
         cursor.moveToNext();
         writer.append("<table class='table table-bordered'>");
         writer.append("<thead >");
@@ -125,7 +127,7 @@ public class MovimentacaoDao
         writer.append("<th colspan =\"3\" >Relatório de Movimentações</th>");
         writer.append("<th colspan =\"3\" >" + cursor.getString(1) + "</th>");
         writer.append("<th colspan =\"3\" >" + cursor.getString(2) + "</th>");
-        writer.append("<th colspan =\"3\" >" + dataHelper.convertLongEmStringData(dia) + "</th>");
+        writer.append("<th colspan =\"3\" >" + dia + "</th>");
         writer.append("</tr>");
         writer.append("</thead>");
         cursor.close();
@@ -139,18 +141,15 @@ public class MovimentacaoDao
         writer.append("</tr>");
 
         Cursor cursor1 = banco.rawQuery("Select * from movimentacao where dia = ?",
-                new String[]{String.valueOf(dia)});
+                new String[]{String.valueOf(dataHelper.converteStringDataEmLong(dia))});
 
         while (cursor1.moveToNext()) {
             writer.append("<tr>");
-            writer.append("<td colspan = 4>"+cursor1.getString(2)+" - "+
-                    cursor1.getString(3)+"</td>");
-            writer.append("<td colspan = 3>"+cursor1.getString(5)+" - "+
-                    cursor1.getString(6)+"</td>");
+            writer.append("<td colspan = 4>"+cursor1.getString(2)+" - "+cursor1.getString(3)+"</td>");
+            writer.append("<td colspan = 3>"+cursor1.getString(5)+" - "+cursor1.getString(6)+"</td>");
             writer.append("<td colspan = 2>"+cursor1.getString(4)+"</td>");
-            writer.append("<td colspan = 4>"+cursor1.getString(7)+" - "+
-                    cursor1.getString(8)+"</td>");
-
+            writer.append("<td colspan = 4>"+cursor1.getString(7)+" - "+ cursor1.getString(8)+"</td>");
+            System.out.println("/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/"+cursor1.getString(2));
             writer.append("</tr>");
 
         }
