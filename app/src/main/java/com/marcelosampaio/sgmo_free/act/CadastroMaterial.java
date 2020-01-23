@@ -114,7 +114,7 @@ public class CadastroMaterial extends AppCompatActivity
         this.materialModel.setDescricao(this.etDesCricaoMaterial.getText().toString().trim());
         this.materialModel.setObsMaterial(this.etObservacaoMaterial.getText().toString().trim());
         Unidade unidadeSelecionada = (Unidade)this.spUnidade.getSelectedItem();
-        this.materialModel.setIdUnidade((int)unidadeSelecionada.getIdUnidade());
+        this.materialModel.setIdUnidade(unidadeSelecionada.getIdUnidade());
         return materialModel;
     }
     //==============================================================================================

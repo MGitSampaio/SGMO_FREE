@@ -3,7 +3,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public class ConexaoSQLite extends SQLiteOpenHelper
+public class    ConexaoSQLite extends SQLiteOpenHelper
 {
 
     private static ConexaoSQLite INSTANCIA_CONEXAO;
@@ -198,10 +198,11 @@ public class ConexaoSQLite extends SQLiteOpenHelper
         String Material = "CREATE TABLE IF NOT EXISTS material" +
                 "(" +
                 "idMaterial INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL ," +
+                "idUnidade INTEGER," +
                 "codigo TEXT NOT NULL UNIQUE," +
                 "descricao TEXT," +
                 "obsMaterial TEXT," +
-                "idUnidade INTEGER" +
+                "FOREIGN KEY(idUnidade) REFERENCES unidade(idUnidade)"+
                 ")";
         sqLiteDatabase.execSQL(Material);
         //------------------------------------------------------------------------------------------

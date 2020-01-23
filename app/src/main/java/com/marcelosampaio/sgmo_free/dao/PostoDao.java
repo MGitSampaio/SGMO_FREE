@@ -206,7 +206,7 @@ public class PostoDao
                 "from cliente,unidade,cargo,escala,funcionario,posto where " +
                 "cliente.idCliente = unidade.idCliente and " +
                 "unidade.idUnidade = posto.idUnidade " +
-                "and funcionario.idCargo = cargo.idCargo " +
+                "and posto.idCargo = cargo.idCargo " +
                 "and posto.idEscala = escala.idEscala " +
                 "and posto.idFuncionario = funcionario.idFuncionario",null);
 

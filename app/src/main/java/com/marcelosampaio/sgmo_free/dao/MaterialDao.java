@@ -26,6 +26,7 @@ public class MaterialDao {
     public long inserir(Material material) {
         ContentValues values = new ContentValues();
 
+        values.put("idUnidade",material.getIdUnidade());
         values.put("codigo", material.getCodigo());
         values.put("descricao", material.getDescricao());
         values.put("obsMaterial", material.getObsMaterial());
@@ -40,10 +41,11 @@ public class MaterialDao {
         ContentValues values = new ContentValues();
 
         values.put("idMaterial",material.getIdMaterial());
+        values.put("idUnidade",material.getIdUnidade());
         values.put("codigo", material.getCodigo());
         values.put("descricao", material.getDescricao());
         values.put("obsMaterial", material.getObsMaterial());
-        values.put("idUnidade",material.getIdUnidade());
+
 
         return banco.update("material", values, "idMaterial = ?", new String[]
                 {String.valueOf(material.getIdMaterial())});
@@ -61,10 +63,11 @@ public class MaterialDao {
         while (cursor.moveToNext()) {
             Material material = new Material();
             material.setIdMaterial(cursor.getInt(0));
-            material.setCodigo(cursor.getString(1));
-            material.setDescricao(cursor.getString(2));
-            material.setObsMaterial(cursor.getString(3));
-            material.setIdUnidade(cursor.getInt(4));
+            material.setIdUnidade(cursor.getInt(1));
+            material.setCodigo(cursor.getString(2));
+            material.setDescricao(cursor.getString(3));
+            material.setObsMaterial(cursor.getString(4));
+
             lstMaterials.add(material);
         }
         cursor.close();
@@ -113,11 +116,13 @@ public class MaterialDao {
         return contador;
     }
 
+    //==============================================================================================
+    // Relatório de Materiais
+
     public void reportMateriais() throws Exception{
-        Cursor cursor = banco.rawQuery("Select cliente.nomeCliente,unidade.nomeUnidade," +
-                "material.codigo, material.descricao from cliente,unidade,material where " +
-                "cliente.idCliente = unidade.idUnidade and material.idUnidade = unidade.idUnidade" +
-                " ",null);
+        Cursor cursor = banco.rawQuery("Select material.codigo, material.descricao, " +
+                "unidade.nomeUnidade, cliente.nomeCliente" +
+                " from material,unidade,cliente where material.idUnidade = unidade.idUnidade " ,null);
 
         FileWriter writer = new FileWriter("/storage/emulated/0/Download/materiais.html");
 
@@ -152,10 +157,11 @@ public class MaterialDao {
         {
 
             writer.append("<tr>");
+            writer.append("<td >"+cursor.getString(3)+"</td>");
+            writer.append("<td >"+cursor.getString(2)+"</td>");
             writer.append("<td >"+cursor.getString(0)+"</td>");
             writer.append("<td >"+cursor.getString(1)+"</td>");
-            writer.append("<td >"+cursor.getString(2)+"</td>");
-            writer.append("<td >"+cursor.getString(3)+"</td>");
+
             writer.append("</tr>");
             writer.append('\n');
 

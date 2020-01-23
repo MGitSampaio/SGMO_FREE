@@ -235,7 +235,13 @@ public class FuncionarioDao {
 
     public void reportFuncionarios() throws Exception {
 
-        Cursor cursor = banco.rawQuery("Select * from funcionario", null);
+        Cursor cursor = banco.rawQuery("Select funcionario.re, funcionario.nomeFuncionario, " +
+                "cargo.cargo, funcionario.telefone, funcionario.rg, funcionario.cpf," +
+                "funcionario.endereco, funcionario.bairro, funcionario.cidade, funcionario.uf, " +
+                "escala.escala, funcionario.folga1,funcionario.folga2 from funcionario, " +
+                "cargo, escala " +
+                "where funcionario.idCargo = cargo.idCargo and " +
+                "funcionario.idEscala = escala.idEscala", null);
 
 
         FileWriter writer = new FileWriter("/storage/emulated/0/Download/funcionarios.html");
@@ -268,6 +274,7 @@ public class FuncionarioDao {
         writer.append("<th scope=\"col\">Bairro</th>");
         writer.append("<th scope=\"col\">Cidade</th>");
         writer.append("<th scope=\"col\">UF</th>");
+        writer.append("<th scope=\"col\">Escala</th>");
         writer.append("<th scope=\"col\">1ª Folga</th>");
         writer.append("<th scope=\"col\">2ª Folga</th>");
 
@@ -280,7 +287,6 @@ public class FuncionarioDao {
             writer.append("<tr>");
             writer.append("<td >" + cursor.getString(0) + "</td>");
             writer.append("<td >" + cursor.getString(1) + "</td>");
-            writer.append("<td >" + cursor.getString(1) + "</td>");
             writer.append("<td >" + cursor.getString(2) + "</td>");
             writer.append("<td >" + cursor.getString(3) + "</td>");
             writer.append("<td >" + cursor.getString(4) + "</td>");
@@ -288,8 +294,10 @@ public class FuncionarioDao {
             writer.append("<td >" + cursor.getString(6) + "</td>");
             writer.append("<td >" + cursor.getString(7) + "</td>");
             writer.append("<td >" + cursor.getString(8) + "</td>");
-            writer.append("<td >" + dataHelper.convertLongEmStringData(cursor.getLong(10)) + "</td>");
+            writer.append("<td >" + cursor.getString(9) + "</td>");
+            writer.append("<td >" + cursor.getString(10) + "</td>");
             writer.append("<td >" + dataHelper.convertLongEmStringData(cursor.getLong(11)) + "</td>");
+            writer.append("<td >" + dataHelper.convertLongEmStringData(cursor.getLong(12)) + "</td>");
             writer.append("</tr>");
             writer.append('\n');
 

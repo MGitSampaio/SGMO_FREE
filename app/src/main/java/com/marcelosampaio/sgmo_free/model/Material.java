@@ -57,7 +57,6 @@ public class Material implements Serializable {
     @Override
     public String toString()
     {
-        return codigo + " - " +
-                descricao;
+        return codigo+" - "+ descricao;
     }
 }

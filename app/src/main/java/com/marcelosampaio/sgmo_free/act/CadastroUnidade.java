@@ -72,7 +72,7 @@ public class CadastroUnidade extends AppCompatActivity {
         Intent i = getIntent();
         if (i.hasExtra("atualizarUnidade")) {
             unidadeModel = (Unidade) i.getSerializableExtra("atualizarUnidade");
-            idUnidade = (int) unidadeModel.getIdUnidade();
+            idUnidade = unidadeModel.getIdUnidade();
             setSpCliente(spCliente, unidadeModel.getIdCliente());
             etUnidade.setText(unidadeModel.getNomeUnidade());
             etContato.setText(unidadeModel.getNomeContato());
@@ -154,7 +154,7 @@ public class CadastroUnidade extends AppCompatActivity {
         unidadeModel = new Unidade();
         unidadeModel.setIdUnidade(this.idUnidade);
         Cliente clienteSelecionado = (Cliente) this.spCliente.getSelectedItem();
-        unidadeModel.setIdCliente((int) clienteSelecionado.getIdCliente());
+        unidadeModel.setIdCliente(clienteSelecionado.getIdCliente());
         unidadeModel.setNomeUnidade(etUnidade.getText().toString().trim());
         unidadeModel.setNomeContato(etContato.getText().toString().trim());
         unidadeModel.setTelefone(etTelefone.getText().toString().trim());
