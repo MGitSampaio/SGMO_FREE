@@ -149,7 +149,7 @@ public class MovimentacaoDao
             writer.append("<td colspan = 3>"+cursor1.getString(5)+" - "+cursor1.getString(6)+"</td>");
             writer.append("<td colspan = 2>"+cursor1.getString(4)+"</td>");
             writer.append("<td colspan = 4>"+cursor1.getString(7)+" - "+ cursor1.getString(8)+"</td>");
-            System.out.println("/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/"+cursor1.getString(2));
+
             writer.append("</tr>");
 
         }

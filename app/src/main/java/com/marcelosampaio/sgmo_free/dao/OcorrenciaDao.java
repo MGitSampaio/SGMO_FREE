@@ -1,5 +1,6 @@
 package com.marcelosampaio.sgmo_free.dao;
 
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -89,16 +90,11 @@ public class OcorrenciaDao {
         banco.delete("ocorrencia", "idOcorrencia = ?", new String[]
                 {String.valueOf(oc.getIdOcorrencia())});
     }
+    //==============================================================================================
+    public void reportOcorrencia(String inicio) throws Exception {
 
-    public void reportOcorrencia(long inicio) throws Exception {
-
-        Cursor cursor = banco.rawQuery("Select ocorrencia.cliente,ocorrencia.unidade," +
-                "ocorrencia.bo, ocorrencia.tipoOcorrencia, ocorrencia.data, ocorrencia.hora," +
-                "ocorrencia.relato from ocorrencia where data = "+inicio, null);
-
-        Cursor cursor2 = banco.rawQuery("Select usuario.usuario from usuario",null);
-
-
+        Cursor cursor = banco.rawQuery("Select * from ocorrencia where data = ?",
+                new String[]{String.valueOf(dataHelper.converteStringDataEmLong(inicio))});
 
         FileWriter writer = new FileWriter("/storage/emulated/0/Download/ocorrencias.html");
 
@@ -117,13 +113,57 @@ public class OcorrenciaDao {
 
         while (cursor.moveToNext()) {
 
-            writer.append("<p>"+cursor.getString(0)+"</p>");
-            writer.append("<p>"+cursor.getString(1)+"</p>");
-            writer.append("<p>"+cursor.getString(2)+"</p>");
-            writer.append("<p>"+cursor.getString(3)+"</p>");
-            writer.append("<p>"+cursor.getString(4)+"</p>");
-            writer.append("<p>"+cursor.getString(5)+"</p>");
-            writer.append("<p>"+cursor.getString(6)+"</p>");
+            writer.append("<table class='table table-bordered'>");
+            writer.append("<thead >");
+            writer.append("<tr>");
+            writer.append("<th scope=\"col\" >Relatório de Ocorrências</th>");
+            writer.append("</tr>");
+            writer.append("</thead>");
+
+            writer.append("<tr>");
+            writer.append("<th colspan=\"4\">Cliente</th>");
+            writer.append("<th colspan=\"4\">Unidade</th>");
+            writer.append("<th colspan=\"4\">Tipo de Ocorrência</th>");
+            writer.append("</tr>");
+
+            writer.append("<tr>");
+            writer.append("<th colspan=\"4\">"+cursor.getString(1)+"</th>");
+            writer.append("<th scolspan=\"4\">"+cursor.getString(2)+"</th>");
+            writer.append("<th colspan=\"4\">"+cursor.getString(4)+"</th>");
+            writer.append("</tr>");
+            writer.append("<tr>");
+            writer.append("<th colspan=\"4\">BO</th>");
+            writer.append("<th colspan=\"4\">Data</th>");
+            writer.append("<th colspan=\"4\">Hora</th> ");
+            writer.append("</tr>");
+
+            writer.append("<tr>");
+            writer.append("<th colspan=\"4\">"+cursor.getString(3)+"</th>");
+            writer.append("<th colspan=\"4\">"+dataHelper.convertLongEmStringData(cursor.getLong
+                    (5))+"</th>");
+            writer.append("<th colspan=\"4\">"+cursor.getString(6)+"</th>");
+            writer.append("</tr>");
+
+
+            writer.append("<tbody>");
+
+            writer.append("<tr>");
+            writer.append("<th colspan=\"12\">"+cursor.getString(7)+"</th>");
+            writer.append("</tr>");
+
+            writer.append("<tr>");
+            writer.append("<th colspan=\"4\">Responsável</th>");
+            writer.append("<th colspan=\"4\">Coordenador</th>");
+            writer.append("<th colspan=\"4\">Gerente</th>");
+            writer.append("</tr>");
+
+            writer.append("<tr>");
+            writer.append("<th colspan=\"4\">.</th>");
+            writer.append("<th colspan=\"4\">.</th>");
+            writer.append("<th colspan=\"4\">.</th>");
+            writer.append("</tr>");
+
+            writer.append("</tbody>");
         }
         writer.append("</body");
         writer.append('\n');
@@ -131,7 +171,7 @@ public class OcorrenciaDao {
         writer.flush();
         writer.close();
         cursor.close();
-        cursor2.close();
+
     }
 
     //==============================================================================================

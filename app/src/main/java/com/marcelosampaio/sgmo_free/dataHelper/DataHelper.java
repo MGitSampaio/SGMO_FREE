@@ -31,10 +31,10 @@ public class DataHelper {
     //==============================================================================================
 
     public long converteStringDataEmLong(String dia) {
-        Date date = null;
+
         long l = 0;
         try {
-            date = sdf.parse(dia);
+            Date date = sdf.parse(dia);
             l = date.getTime();
 
         } catch (ParseException e) {

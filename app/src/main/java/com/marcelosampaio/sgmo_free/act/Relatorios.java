@@ -160,7 +160,7 @@ public class Relatorios extends AppCompatActivity {
                         ocorrenciaDao = new OcorrenciaDao(Relatorios.this);
 
                         try {
-                            ocorrenciaDao.reportOcorrencia(dataHelper.converteStringDataEmLong(inicio.getText().toString()));
+                            ocorrenciaDao.reportOcorrencia(inicio.getText().toString());
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
@@ -178,8 +178,7 @@ public class Relatorios extends AppCompatActivity {
                         rondaDao = new RondaDao(Relatorios.this);
 
                         try {
-                            rondaDao.reportRondas(dataHelper.converteStringDataEmLong
-                                    (inicio.toString()));
+                            rondaDao.reportRondas(inicio.getText().toString());
                         } catch (Exception e) {
                             e.printStackTrace();
                         }

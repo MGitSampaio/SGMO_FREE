@@ -5,16 +5,19 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.marcelosampaio.sgmo_free.act.Relatorios;
 import com.marcelosampaio.sgmo_free.dataHelper.ConexaoSQLite;
 import com.marcelosampaio.sgmo_free.dataHelper.DataHelper;
 import com.marcelosampaio.sgmo_free.model.Ronda;
+import com.marcelosampaio.sgmo_free.model.Usuario;
+import com.marcelosampaio.sgmo_free.model.Visita;
 
 import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 
 public class RondaDao {
-
+    
     private final SQLiteDatabase banco;
     private DataHelper dataHelper = new DataHelper();
     //==============================================================================================
@@ -108,8 +111,10 @@ public class RondaDao {
                 {String.valueOf(ro.getIdRonda())});
     }
 
-    public void reportRondas(long dia) throws Exception {
+    //==============================================================================================
+    public void reportRondas(String dia) throws Exception {
 
+        long data = dataHelper.converteStringDataEmLong(dia);
 
         FileWriter writer = new FileWriter("/storage/emulated/0/Download/rondas.html");
 
@@ -126,111 +131,136 @@ public class RondaDao {
         writer.append("</head>");
         writer.append("<body>");
 
-        Cursor cursor = banco.rawQuery("Select * from usuario", null);
-        cursor.moveToNext();
+
+        Usuario usuario = pegaUsuario();
         writer.append("<table class='table table-bordered'>");
         writer.append("<thead >");
         writer.append("<tr >");
         writer.append("<th colspan =\"4\" >Relatório de Rondas</th>");
-        writer.append("<th colspan =\"4\" >" + cursor.getString(1) + "</th>");
-        writer.append("<th colspan =\"4\" >" + cursor.getString(2) + "</th>");
+        writer.append("<th colspan =\"4\" >" + usuario.getUsuario() + "</th>");
+        writer.append("<th colspan =\"4\" >" + usuario.getArea() + "</th>");
         writer.append("</tr>");
         writer.append("</thead>");
-        cursor.close();
-
-        Cursor cursor1 = banco.rawQuery("Select * from ronda where dataInicial = ?",
-                new String[]{String.valueOf(dia)});
-        int idRonda = cursor1.getInt(0);
-        while(cursor1.moveToNext()) {
-
-
-            writer.append("<tr>");
-            writer.append("<th colspan = 2>Data Inicial</th>");
-            writer.append("<th colspan = 2>Hora Inicial</th>");
-            writer.append("<th colspan = 2>Data Término</th>");
-            writer.append("<th colspan = 2>Hora Término</th>");
-            writer.append("<th colspan = 2>Km Inicial</th>");
-            writer.append("<th colspan = 2>Km Final</th>");
-            writer.append("</tr>");
-
-
-            writer.append("<tbody>");
-            writer.append("<tr>");
-            writer.append("<td colspan = 2>" + dataHelper.convertLongEmStringData(cursor1.getLong(1)) + "</td>");
-            writer.append("<td colspan = 2>" + cursor1.getLong(2) + "</td>");
-            writer.append("<td colspan = 2>" + dataHelper.convertLongEmStringData(cursor1.getLong(10)) + "</td>");
-            writer.append("<td colspan = 2>" + cursor1.getLong(11) + "</td>");
-            writer.append("<td colspan = 2>" + cursor1.getString(3) + "</td>");
-            writer.append("<td colspan = 2>" + cursor1.getString(12) + "</td>");
-            writer.append("</tr>");
-            writer.append("</tbody>");
-
-            writer.append("<tr>");
-            writer.append("<th colspan = 2>VTR</th>");
-            writer.append("<th colspan = 2>Data Abastecimento</th>");
-            writer.append("<th colspan = 2>Hora Abastecimento</th>");
-            writer.append("<th colspan = 2>KM Abastecimento</th>");
-            writer.append("<th colspan = 2>Valor Abastecido</th>");
-            writer.append("<th colspan = 2>Nota Fiscal</th>");
-            writer.append("</tr>");
-
-            writer.append("<tr>");
-            writer.append("<td colspan = 2>" + cursor1.getString(6) + "</td>");
-            writer.append("<td colspan = 2>" + cursor1.getString(4) + "</td>");
-            writer.append("<td colspan = 2>" + cursor1.getString(5) + "</td>");
-            writer.append("<td colspan = 2>" + cursor1.getString(7) + "</td>");
-            writer.append("<td colspan = 2>" + cursor1.getString(8) + "</td>");
-            writer.append("<td colspan = 2>" + cursor1.getString(9) + "</td>");
-            writer.append("</tr>");
-        }
-        cursor1.close();
-
 
         writer.append("<tr>");
-        writer.append("<th colspan = 4>Cliente - Unidade</th>");
-        writer.append("<th colspan = 2>Chegada</th>");
-        writer.append("<th colspan = 2>Km</th>");
-        writer.append("<th colspan = 2>Saida</th>");
-        writer.append("<th colspan = 2>Obs</th>");
+        writer.append("<th colspan = \"2\" >Data Inicial</th>");
+        writer.append("<th colspan = \"2\" >Hora Inicial</th>");
+        writer.append("<th colspan = \"2\" >Data Término</th>");
+        writer.append("<th colspan = \"2\">Hora Término</th>");
+        writer.append("<th colspan = \"2\">Km Inicial</th>");
+        writer.append("<th colspan = \"2\">Km Final</th>");
         writer.append("</tr>");
 
-        Cursor cursor2 = banco.rawQuery("Select * from visita where idRonda = ?",
-                new String[]{String.valueOf(idRonda)});
+        Ronda ronda = pegaRonda(data);
 
-        while (cursor2.moveToNext()) {
-            writer.append("<tr>");
-            writer.append("<td colspan = 4>"+cursor2.getString(2)+"</td>");
-            writer.append("<td colspan = 2>"+cursor2.getString(3)+"</td>");
-            writer.append("<td colspan = 2>"+cursor2.getString(4)+"</td>");
-            writer.append("<td colspan = 2>"+cursor2.getString(5)+"</td>");
-            writer.append("<td colspan = 2>"+cursor2.getString(6)+"</td>");
-            writer.append("</tr>");
-
-        }
-        cursor2.close();
+        writer.append("<tbody>");
         writer.append("<tr>");
-        writer.append("<th colspan = 4>Supervisor</th>");
-        writer.append("<th colspan = 4>Coordenador</th>");
-        writer.append("<th colspan = 4>Gerente</th>");
+        writer.append("<td colspan = \"2\">" + ronda.getDataInicial() + "</td>");
+        writer.append("<td colspan = \"2\">" + ronda.getHoraInicial() + "</td>");
+        writer.append("<td colspan = \"2\">" + ronda.getDataFinal() + "</td>");
+        writer.append("<td colspan = \"2\">" + ronda.getHoraFinal() + "</td>");
+        writer.append("<td colspan = \"2\">" + ronda.getKmInicial() + "</td>");
+        writer.append("<td colspan = \"2\">" + ronda.getHoraFinal() + "</td>");
+        writer.append("</tr>");
+        writer.append("</tbody>");
 
+        writer.append("<tr>");
+        writer.append("<th colspan = \"2\">VTR</th>");
+        writer.append("<th colspan = \"2\">Data Abastecimento</th>");
+        writer.append("<th colspan = \"2\">Hora Abastecimento</th>");
+        writer.append("<th colspan = \"2\">KM Abastecimento</th>");
+        writer.append("<th colspan = \"2\">Valor Abastecido</th>");
+        writer.append("<th colspan = \"2\">Nota Fiscal</th>");
         writer.append("</tr>");
 
         writer.append("<tr>");
-        writer.append("<td colspan = 4 ></td>");
-        writer.append("<td colspan = 4 ></td>");
-        writer.append("<td colspan = 4 ></td>");
-
+        writer.append("<td colspan = \"2\">" + ronda.getVtr() + "</td>");
+        writer.append("<td colspan = \"2\">" + ronda.getDataAbastecimento()+ "</td>");
+        writer.append("<td colspan = \"2\">" + ronda.getHoraAbastecimento() + "</td>");
+        writer.append("<td colspan = \"2\">" + ronda.getKmAbastecimento() + "</td>");
+        writer.append("<td colspan = \"2\">" + ronda.getValorAbastecimento() + "</td>");
+        writer.append("<td colspan = \"2\">" + ronda.getNotaAbastecimento() + "</td>");
         writer.append("</tr>");
+
+        Visita visita = pegaVisita(pegaRonda(data).getIdRonda());
+
+        writer.append("<tr>");
+        writer.append("<th colspan = \"6\">Posto</th>");
+        writer.append("<th colspan = \"2\">Hora Chegada</th>");
+        writer.append("<th colspan = \"2\">Km Chegada</th>");
+        writer.append("<th colspan = \"2\">Hora Saída</th>");
+        writer.append("</tr>");
+
+        writer.append("<td colspan = \"6\">" + visita.getUnidade() + "</td>");
+        writer.append("<td colspan = \"2\">" + visita.getHoraChegada() + "</td>");
+        writer.append("<td colspan = \"2\">" + visita.getKmChegada() + "</td>");
+        writer.append("<td colspan = \"2\">" + visita.getHoraSaida() + "</td>");
 
         writer.append("</body");
         writer.append('\n');
         writer.append("</html>");
         writer.flush();
         writer.close();
-
-
     }
 
     //==============================================================================================
+
+    private Usuario pegaUsuario() {
+        Usuario usuario = new Usuario();
+        Cursor cursor = banco.rawQuery("Select * from usuario", null);
+        while (cursor.moveToNext()) {
+            
+            usuario.setUsuario(cursor.getString(1));
+            usuario.setArea(cursor.getString(2));
+            cursor.close();
+        }
+        return usuario;
+    }
+
+    //==============================================================================================
+
+    public Ronda pegaRonda(long data) {
+        
+        Ronda ronda = new Ronda();
+
+
+        Cursor cursor = banco.rawQuery("Select * from ronda where dataInicial = ?",
+                new String[]{String.valueOf(data)});
+
+        while (cursor.moveToNext()) {
+            ronda.setIdRonda(cursor.getInt(0));
+            ronda.setDataInicial(cursor.getLong(1));
+            ronda.setHoraInicial(cursor.getString(2));
+            ronda.setDataAbastecimento(cursor.getLong(3));
+            ronda.setHoraAbastecimento(cursor.getString(4));
+            ronda.setVtr(cursor.getString(5));
+            ronda.setKmAbastecimento(cursor.getString(6));
+            ronda.setValorAbastecimento(cursor.getString(7));
+            ronda.setNotaAbastecimento(cursor.getString(8));
+            ronda.setDataFinal(cursor.getLong(9));
+            ronda.setHoraFinal(cursor.getString(10));
+            cursor.close();
+        }
+        return ronda;
+    }
+
+    private Visita pegaVisita(int ronda) {
+
+        Visita visita = new Visita();
+
+        Cursor cursor = banco.rawQuery("Select * from visita where idRonda = ?",
+                new String[]{String.valueOf(ronda)});
+        while (cursor.moveToNext()) {
+
+            visita.setIdVisita(cursor.getInt(0));
+            visita.setIdRonda(cursor.getInt(1));
+            visita.setUnidade(cursor.getString(2));
+            visita.setHoraChegada(cursor.getString(3));
+            visita.setHoraSaida(cursor.getString(4));
+
+            cursor.close();
+        }
+        return visita;
+    }
 }
 
