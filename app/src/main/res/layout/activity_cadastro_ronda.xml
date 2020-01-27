@@ -57,7 +57,7 @@
                     android:ems="10"
                     android:hint="@string/kmInicial"
                     android:inputType="time"
-                    android:maxLength="5" />
+                    android:maxLength="6" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -192,7 +192,7 @@
                     android:ems="10"
                     android:hint="@string/kmFinal"
                     android:inputType="time"
-                    android:maxLength="5" />
+                    android:maxLength="6" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
