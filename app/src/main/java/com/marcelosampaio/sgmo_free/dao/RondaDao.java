@@ -155,9 +155,11 @@ public class RondaDao {
 
         writer.append("<tbody>");
         writer.append("<tr>");
-        writer.append("<td colspan = \"2\">" + ronda.getDataInicial() + "</td>");
+        writer.append("<td colspan = \"2\">" +
+                dataHelper.convertLongEmStringData(ronda.getDataInicial()) + "</td>");
         writer.append("<td colspan = \"2\">" + ronda.getHoraInicial() + "</td>");
-        writer.append("<td colspan = \"2\">" + ronda.getDataFinal() + "</td>");
+        writer.append("<td colspan = \"2\">" +
+                dataHelper.convertLongEmStringData(ronda.getDataFinal()) + "</td>");
         writer.append("<td colspan = \"2\">" + ronda.getHoraFinal() + "</td>");
         writer.append("<td colspan = \"2\">" + ronda.getKmInicial() + "</td>");
         writer.append("<td colspan = \"2\">" + ronda.getHoraFinal() + "</td>");
@@ -175,7 +177,8 @@ public class RondaDao {
 
         writer.append("<tr>");
         writer.append("<td colspan = \"2\">" + ronda.getVtr() + "</td>");
-        writer.append("<td colspan = \"2\">" + ronda.getDataAbastecimento()+ "</td>");
+        writer.append("<td colspan = \"2\">" +
+                dataHelper.convertLongEmStringData(ronda.getDataAbastecimento())+ "</td>");
         writer.append("<td colspan = \"2\">" + ronda.getHoraAbastecimento() + "</td>");
         writer.append("<td colspan = \"2\">" + ronda.getKmAbastecimento() + "</td>");
         writer.append("<td colspan = \"2\">" + ronda.getValorAbastecimento() + "</td>");
@@ -231,14 +234,16 @@ public class RondaDao {
             ronda.setIdRonda(cursor.getInt(0));
             ronda.setDataInicial(cursor.getLong(1));
             ronda.setHoraInicial(cursor.getString(2));
-            ronda.setDataAbastecimento(cursor.getLong(3));
-            ronda.setHoraAbastecimento(cursor.getString(4));
-            ronda.setVtr(cursor.getString(5));
-            ronda.setKmAbastecimento(cursor.getString(6));
-            ronda.setValorAbastecimento(cursor.getString(7));
-            ronda.setNotaAbastecimento(cursor.getString(8));
-            ronda.setDataFinal(cursor.getLong(9));
-            ronda.setHoraFinal(cursor.getString(10));
+            ronda.setKmInicial(cursor.getString(3));
+            ronda.setDataAbastecimento(cursor.getLong(4));
+            ronda.setHoraAbastecimento(cursor.getString(5));
+            ronda.setVtr(cursor.getString(6));
+            ronda.setKmAbastecimento(cursor.getString(7));
+            ronda.setValorAbastecimento(cursor.getString(8));
+            ronda.setNotaAbastecimento(cursor.getString(9));
+            ronda.setDataFinal(cursor.getLong(10));
+            ronda.setHoraFinal(cursor.getString(11));
+            ronda.setKmFinal(cursor.getString(12));
             cursor.close();
         }
         return ronda;
@@ -256,7 +261,8 @@ public class RondaDao {
             visita.setIdRonda(cursor.getInt(1));
             visita.setUnidade(cursor.getString(2));
             visita.setHoraChegada(cursor.getString(3));
-            visita.setHoraSaida(cursor.getString(4));
+            visita.setKmChegada(cursor.getString(4));
+            visita.setHoraSaida(cursor.getString(5));
 
             cursor.close();
         }
