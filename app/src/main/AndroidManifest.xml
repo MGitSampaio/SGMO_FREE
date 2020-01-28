@@ -26,7 +26,7 @@
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="@string/addMob_appid" />
+            android:value="ca-app-pub-9426280758576315~1631582962" />
 
         <activity android:name=".act.CadastroUsuario"
             android:label="Usuário">
