@@ -50,7 +50,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         app:adSize="BANNER"
-        app:adUnitId="ca-app-pub-5510724908004504/6155812609"
+        app:adUnitId="ca-app-pub-9426280758576315/9832865983"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:layout_editor_absoluteX="0dp"/>
 
